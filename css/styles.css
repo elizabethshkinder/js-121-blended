@@ -1,8 +1,8 @@
 /* common */
+
 * {
     box-sizing: border-box;
 }
-
 
 body {
     background-color: #fff;
@@ -32,6 +32,10 @@ ul {
 
 
 /* components */
+
+.active {
+    color: red;
+}
 
 
 .task-title {
