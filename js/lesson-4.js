@@ -87,16 +87,7 @@ list.insertAdjacentHTML('beforeend', markUp);
 // 20 - очисти список
 list.innerHTML = "";
 
-
-
-
-
-
-
-
-
-
-console.log(findListElem);
+console.log();
 
 
 // ---------------------- Завдання 2 -------------------------
@@ -107,7 +98,27 @@ console.log(findListElem);
 // Парні числа повинні мати зелений фон (додати клас even), 
 // Непарні числа - жовтий фон (додати клас odd).
 
-// const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+const arrayElems = [];
+
+for(let i = 0; i < 100; i++){
+const el = document.createElement("div");
+el.classList.add("number");
+const num = randomNumber();
+el.textContent = num;
+
+if(num % 2 === 0) {
+    el.classList.add("even");
+} else {
+    el.classList.add("odd");
+}
+
+arrayElems.push(el);
+};
+
+const container = document.querySelector(".number-container");
+container.append(...arrayElems);
 
 
 
