@@ -153,6 +153,70 @@ container.append(...arrayElems);
 // false, верни дефолтне значення "Anonymous" у span.
 
 
+// const input = document.querySelector(".contact-form-input");
+// input.addEventListener("input", checkInput);
+
+// function checkInput() {
+//     if(input.value.length > 6) {
+//         input.classList.add("success");
+//         input.classList.remove("error");
+//     } else if (input.value.length < 6) {
+//         input.classList.add("error");
+//         input.classList.remove("success");
+//     }
+// }
+
+// function checkInput(){
+//     input.classList.toggle("success", input.ariaValueMax.length > 6);
+//     input.classList.toggle("error", input.ariaValueMax.length <= 6);
+// }
+
+// input.addEventListener("focus", focusInput);
+
+// function focusInput(){
+//     if(input.value.trim() === "") {
+//         input.style.outline = '3px solid red';
+//     } else {
+//         input.style.outline = '3px solid green';
+//     }
+// }
+
+// input.addEventListener("blur", blurInput);
+
+// function blurInput(){
+//     if(input.value.trim() === "") {
+//         input.style.outline = '3px solid red';
+//     } else {
+//         input.style.outline = '3px solid lime';
+//     }
+// }
+
+
+const form = document.querySelector(".contact-form");
+form.addEventListener("submit", submitFoo);
+
+function submitFoo(event) {
+
+    event.preventDefault();
+    const {accept, userName} = event.target.elements;
+    if (accept.checked || userName.value.trim()) {
+        alert("Enter name");
+        return;
+    }
+
+    console.log({
+        userName: userName.value.trim(),
+    });
+
+    form.reset();
+}
+
+
+const input = document.querySelector(".contact-form-input");
+input.addEventListener("input", inputFoo);
+
+
+
 // ---------------------- Завдання 4 -------------------------
 
 // Використовуй шаблон розмітки з файлу html та напиши наступний функціонал:
